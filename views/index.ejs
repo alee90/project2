@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<h1>All The Music</h1>
+	<% for(var i=0;i<music.length;i++) { %>
+		<div id='artist'><h3><a href='/music/<%= music[i].id %>'><strong><%= music[i].name %></strong></h3></a></div>
+		<div id='url'><h3>Song: </h3><a href="<%= music[i].song_url %>"><%= music[i].song %></a></div>
+		<div id='album'><h3>Album: </h3><strong><%= music[i].album %></strong></div>
+		<hr>
+	<% } %>
+	<a href='/music/new'>Add new song!!</a>
+</body>
+</html>
