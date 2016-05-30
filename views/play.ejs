@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='/styles/show.css'>
+	<title>Play</title>
+</head>
+<body>
+	<h1>Play Me!</h1>
+	<% for(var i=0;i<music.length;i++) { %>
+		<div id='artist'><a href = '/music/index/play/<%= music[i].id %>'<h3><strong><%= music[i].name %></strong></h3></a></div>
+			<% for(var j=0;j<music.length;j++) { %>
+			<div id='song URL'><a href='<%= music[i].song_url[j]%>'><%= music[i].songs[j] %></a></div>
+			<% } %>
+			<br><hr>
+	<% } %>
+
+	<a href='/music/index/new'>New Artist/Songs!</a>
+
+</body>
+</html>

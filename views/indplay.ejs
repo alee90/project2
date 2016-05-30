@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='/styles/show.css'>
+	<title>Play</title>
+</head>
+<body>
+	<% for(var i=0;i<music.songs.length;i++) { %>
+		<p><a href='<%= music.song_url[i]%>'><%= music.songs[i] %></a></p>
+	<% } %>
+	<a href='/music/index/play/<%= music.id %>/edit'>Edit</a>
+	<form action='/music/index/play/<%= music.id %>' method='POST'>
+	  	<input type='hidden' name='_method' value='DELETE'/>
+		<button id='button'>Delete!</button>
+	</form>
+</body>
+</html>

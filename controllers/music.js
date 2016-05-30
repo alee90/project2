@@ -32,6 +32,68 @@ router.get('/index', function(req, res) {
     })
 });
 
+//NEW
+router.get('/index/new', function(req,res){
+    console.log('!!====== NEW ROUTE ======!!');
+    res.render('new.ejs');
+})
+
+//PLAY
+router.get('/index/play', function(req, res) {
+    console.log('!!====== PLAY ROUTE ======!!');
+    // console.log(Music);
+    Music.find().then(function(music) {
+        res.render('play.ejs', {music});
+        console.log(music[0].songs[0]);
+    })
+});
+
+//INDIVIDUAL PLAY
+router.get('/index/play/:id', function(req, res) {
+    console.log(req.params);
+    Music.findById(req.params.id).then(function(music) {
+    console.log('!!========!!INDIV PLAY ROUTE!!========!!');
+    console.log(music);
+    res.render('indplay.ejs', {music})
+    });   
+});
+
+
+//EDIT
+router.get('/index/play/:id/edit', function(req,res){
+    console.log(req.params);
+    Music.findById(req.params.id, function(err,music) {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log('!!========!!EDIT ROUTE!!========!!');
+            res.render('edit.ejs', {music})      }
+    });
+})
+
+// UPDATE
+router.put('/index/play/:id', function(req,res){
+    console.log('!!========!!UPDATE ROUTE!!========!!');
+    Music.findOneAndUpdate({
+        _id: req.params.id
+    }, req.body, function(err, music) {
+        console.log(req.body);
+    });
+    res.redirect('/music/index/play');
+});
+
+// //UPDATE2
+// router.put('music/index/play/:id',function(req,res){
+//     console.log('!!========!!UPDATE ROUTE!!========!!');
+//     Music.findOneAndUpdate({
+//         _id: req.params.id},{
+//             $set:req.body},
+//             function(music){
+//                 console.log(music);
+//             });
+//     res.redirect('/music/index/play');
+// });
+
 //SHOW
 router.get('/index/:album', function(req,res){
     var x = req.params.album;
@@ -62,11 +124,32 @@ router.get('/index/:album/songs', function(req,res){
     });
 })
 
-//NEW
-router.get('/index/new', function(req,res){
-    console.log('!!====== NEW ROUTE ======!!');
-    res.render('new.ejs');
-})
+// //UPDATE
+// router.put('/index/play/:id',function(req,res){
+//     console.log('!!========!!UPDATE ROUTE!!========!!');
+//     Music.findOneAndUpdate({
+//         _id:req.params.id},{
+//             $set:req.body},
+//             function(music){
+//                 console.log(music);
+//             });
+//     res.redirect('/music/index/play');
+// });
+
+
+//DELETE FROM PLAY
+router.delete('/index/play/:id',function(req, res) {
+    Music.findOneAndRemove({_id: req.params.id}).then(function(err) {
+        if(err){
+            console.log(err);
+        }
+    console.log('!!========!!DELETE ROUTE!!========!!');
+    res.redirect('/music/index/play');
+    });
+});
+
+//PLAY --> ARTIST INDIV SONGS
+
 
 //POST
 router.post('/index', function(req, res) {
@@ -82,13 +165,16 @@ router.post('/index', function(req, res) {
     res.redirect('/music/index/');
 });
 
-router.get('/search', function(req,res){
-spotifyApi.searchTracks('Love')
-  .then(function(data) {
-    console.log('Search by "Love"', data.body);
-    res.json(data.body);
-  }, function(err) {
-    console.error(err);
-  });
-})
+
+//SEARCH
+// router.get('/search/:search', function(req,res){
+//     var x = req.params.search;
+//     spotifyApi.searchTracks(x);
+//     .then(function(data) {
+//         console.log('Search by '+x, data.body);
+//         res.json(data.body);
+//     }, function(err) {
+//         console.error(err);
+//     });
+// })
 module.exports = router;

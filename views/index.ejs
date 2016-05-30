@@ -7,9 +7,11 @@
 <body>
 	<h1>Pop Star Battlz</h1>
 	<% for(var i=0;i<music.length;i++) { %>
-		<div id='artist'><h3><a href='/music/index/<%= music[i].spotify_id %>'><strong><%= music[i].name %></strong></h3></a></div>
+		<div id='artist'><h3><strong><%= music[i].name %></strong></h3></a></div>
+		<div id='albums'><h4><a href='/music/index/<%= music[i].spotify_id %>'>Albums</a></h4></div>
 		<a href='/music/index/<%= music[i].spotify_id %>/songs'>Song List!</a><br>
+
 	<% } %>
-	<a href='/music/index/new'>Add new Artist!!</a>
+	<a href='/music/index/play'>Resources!!</a>
 </body>
 </html>

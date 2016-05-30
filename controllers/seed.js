@@ -9,7 +9,7 @@ router.get('/newsong',function(req,res) {
 		{
 			name: 'Britney Spears',
 			spotify_id: '26dSoYclwsYLMAKD3tpOr4',
-			song: ['...Baby One More Time',
+			songs: ['...Baby One More Time',
 				'Stronger',
 				'Oops!... I Did It Again',
 				'Toxic',
@@ -24,7 +24,7 @@ router.get('/newsong',function(req,res) {
 		},{
 			name: 'Christina Aguilera',
 			spotify_id: '1l7ZsJRRS8wlW3WfJfPfNS',
-			song: ['Beautiful',
+			songs: ['Beautiful',
 				'Genie in a Bottle',
 				'Sex for Breakfast',
 				'Prima Donna',
@@ -40,7 +40,7 @@ router.get('/newsong',function(req,res) {
 		},{
 			name: 'Backstreet Boys',
 			spotify_id: '5rSXSAkZ67PYJSvpUpkOr7',
-			song: ['As Long as You Love Me',
+			songs: ['As Long as You Love Me',
 				'I Need You Tonight',
 				'I Want It That Way',
 				'Get Another Boyfriend',
@@ -57,7 +57,7 @@ router.get('/newsong',function(req,res) {
 		},{
 			name: '*NSYNC',
 			spotify_id: '6Ff53KvcvAj5U7Z1vojB5o',
-			song: ['No Strings Attached',
+			songs: ['No Strings Attached',
 				'Up Against The Wall',
 				'This I Promise You',
 				'Girlfriend',
@@ -74,7 +74,7 @@ router.get('/newsong',function(req,res) {
 
 			name: 'Spice Girls',
 			spotify_id: '0uq5PttqEjj3IH1bzwcrXF',
-			song: ['Wannabe',
+			songs: ['Wannabe',
 				'Spice Up Your Life',
 				'Stop',
 				'Goodbye',
