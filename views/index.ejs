@@ -5,13 +5,12 @@
 	<link rel='stylesheet' type='text/css' href='/styles/index.css'>
 </head>
 <body>
-	<h1>Pop Star Battlz</h1>
+	<h1>90's Pop Star Info!</h1><br>
 	<% for(var i=0;i<music.length;i++) { %>
 		<div id='artist'><h3><strong><%= music[i].name %></strong></h3></a></div>
-		<div id='albums'><h4><a href='/music/index/<%= music[i].spotify_id %>'>Albums</a></h4></div>
-		<a href='/music/index/<%= music[i].spotify_id %>/songs'>Song List!</a><br>
-
-	<% } %>
+		<div id='content'><h4><a href='/music/index/<%= music[i].spotify_id %>'>Albums</a></h4>
+		<a href='/music/index/<%= music[i].spotify_id %>/songs'>Song List!</a><br></div>
+	<% } %><br>
 	<a href='/music/index/play'>Resources!!</a>
 </body>
 </html>

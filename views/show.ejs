@@ -8,11 +8,8 @@
 	<h1>Albums!</h1>
 	<% for(var i=0;i< ass.items.length;i++) { %>
 		<p><%= ass.items[i].name %></p>
-		<form action='/music/index' method='POST'>
-	  		<input type='hidden' name='_method' value='DELETE'/>
-			<button id='button'>Delete!</button>
-		</form>
 	<% } %>
+	<a href='/music/index'>Index</a>
 
 
 </body>

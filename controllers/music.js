@@ -32,12 +32,6 @@ router.get('/index', function(req, res) {
     })
 });
 
-//NEW
-router.get('/index/new', function(req,res){
-    console.log('!!====== NEW ROUTE ======!!');
-    res.render('new.ejs');
-})
-
 //PLAY
 router.get('/index/play', function(req, res) {
     console.log('!!====== PLAY ROUTE ======!!');
@@ -58,7 +52,11 @@ router.get('/index/play/:id', function(req, res) {
     });   
 });
 
-
+//NEW
+router.get('/index/new', function(req,res){
+    console.log('!!====== NEW ROUTE ======!!');
+    res.render('new.ejs');
+})
 //EDIT
 router.get('/index/play/:id/edit', function(req,res){
     console.log(req.params);
@@ -81,18 +79,6 @@ router.put('/index/play/:id', function(req,res){
     });
     res.redirect('/music/index/play');
 });
-
-// //UPDATE2
-// router.put('music/index/play/:id',function(req,res){
-//     console.log('!!========!!UPDATE ROUTE!!========!!');
-//     Music.findOneAndUpdate({
-//         _id: req.params.id},{
-//             $set:req.body},
-//             function(music){
-//                 console.log(music);
-//             });
-//     res.redirect('/music/index/play');
-// });
 
 //SHOW
 router.get('/index/:album', function(req,res){
@@ -123,18 +109,6 @@ router.get('/index/:album/songs', function(req,res){
         }
     });
 })
-
-// //UPDATE
-// router.put('/index/play/:id',function(req,res){
-//     console.log('!!========!!UPDATE ROUTE!!========!!');
-//     Music.findOneAndUpdate({
-//         _id:req.params.id},{
-//             $set:req.body},
-//             function(music){
-//                 console.log(music);
-//             });
-//     res.redirect('/music/index/play');
-// });
 
 
 //DELETE FROM PLAY

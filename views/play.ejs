@@ -7,14 +7,15 @@
 <body>
 	<h1>Play Me!</h1>
 	<% for(var i=0;i<music.length;i++) { %>
-		<div id='artist'><a href = '/music/index/play/<%= music[i].id %>'<h3><strong><%= music[i].name %></strong></h3></a></div>
+		<div id='artist'><h1><a href = '/music/index/play/<%= music[i].id %>'<strong><%= music[i].name %></strong></a></h1></div>
 			<% for(var j=0;j<music.length;j++) { %>
 			<div id='song URL'><a href='<%= music[i].song_url[j]%>'><%= music[i].songs[j] %></a></div>
 			<% } %>
 			<br><hr>
 	<% } %>
 
-	<a href='/music/index/new'>New Artist/Songs!</a>
+	<a href='/music/index/new'>New Artist/Songs!</a><br>
+	<a href='/music/index'>Index</a>
 
 </body>
 </html>
