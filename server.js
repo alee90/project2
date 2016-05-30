@@ -2,7 +2,7 @@
 var express = require('express');
 var	app = express();
 var	bodyParser = require('body-parser');
-var	db = process.env.MONGODB_URI || "mongodb://localhost/music_app";
+var	db = process.env.MONGODB_URI || "mongodb://localhost/spotify_app";
 var	methodOverride = require('method-override');
 var	mongoose = require('mongoose');
 var	morgan = require('morgan');
@@ -13,14 +13,6 @@ var http = require("http");
 
 //API
 var SpotifyWebApi = require('spotify-web-api-node');
-
-
-/* Create an HTTP server to handle responses */
-// http.createServer(function(request, response) {
-//   	response.writeHead(200, {"Content-Type": "text/plain"});
-//   	response.write("Hello World");
-//   	response.end();
-// 	}).listen(8888);
 
 // MIDDLEWARE
 app.use(cookieParser());
@@ -44,8 +36,8 @@ var music = require('./controllers/music.js');
 app.use('/music', music);
 
 //SEED
-// var seed = require('./controllers/seed.js');
-// app.use('/seed', seed);
+var seed = require('./controllers/seed.js');
+app.use('/seed', seed);
 
 
 // LISTEN

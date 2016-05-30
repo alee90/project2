@@ -26,37 +26,61 @@ router.get('/', function(req,res){
 //INDEX
 router.get('/index', function(req, res) {
     console.log('!!====== INDEX ROUTE ======!!');
-    console.log(Music);
+    // console.log(Music);
     Music.find().then(function(music) {
         res.render('index.ejs', {music});
     })
 });
 
-router.get('/thing', function(req,res){
-// Get multiple albums 
-spotifyApi.getArtistTopTracks('6Ff53KvcvAj5U7Z1vojB5o', 'US')
-    .then(function(data) {
-        console.log(data.body);
-
-    }, function(err) {
-        console.log('Something went wrong!', err);
-  });
+//SHOW
+router.get('/index/:album', function(req,res){
+    var x = req.params.album;
+    request('https://api.spotify.com/v1/artists/'+x+'/albums?market=US&album_type=album', function(err,response,thing){
+        if(!err && response.statusCode == 200){
+            var ass = JSON.parse(thing);
+            console.log('================');
+            console.log(ass.items[0].name);
+            console.log('================');
+            console.log('!!====== SHOW ROUTE ======!!');
+            res.render('show.ejs', {ass})
+        }
+    });
 })
 
-router.get('/album', function(req,res){
-spotifyApi.getArtistAlbums('6Ff53KvcvAj5U7Z1vojB5o')
-    .then(function(data) {
-    // console.log('Artist albums', data.body);
-    // var woof = data.body;
-    // console.log(woof);
-    console.log(data.body)
-    // res.render('show.ejs', data.body);
-  }, function(err) {
-    console.error(err);
-  });
-
-
+//SONGS LIST
+router.get('/index/:album/songs', function(req,res){
+    var x = req.params.album;
+    request('https://api.spotify.com/v1/artists/'+x+'/top-tracks?country=US', function(err,response,thing){
+        if(!err && response.statusCode == 200){
+            var body = JSON.parse(thing);
+            console.log('================');
+            console.log(body.tracks[0].artists[0].name);
+            console.log('================');
+            console.log('!!====== SHOW ROUTE ======!!');
+            res.render('songs.ejs', {body})
+        }
+    });
 })
+
+//NEW
+router.get('/index/new', function(req,res){
+    console.log('!!====== NEW ROUTE ======!!');
+    res.render('new.ejs');
+})
+
+//POST
+router.post('/index', function(req, res) {
+    console.log(req.body);
+    var music = new Music(req.body);
+    music.save(function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log('******!!!!!!SAVED!!!!!!*******');
+        }
+    });
+    res.redirect('/music/index/');
+});
 
 router.get('/search', function(req,res){
 spotifyApi.searchTracks('Love')

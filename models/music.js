@@ -4,9 +4,9 @@ var mongoose = require('mongoose');
 //SCHEMAS
 var musicSchema = new mongoose.Schema({
 	name: String,
-	song: String,
-	album: String,
-	song_url: String,
+	spotify_id: String,
+	songs: Array,
+	song_url: Array,
 });
 
 //MAP THRU MONGOOSE
