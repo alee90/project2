@@ -1,0 +1,22 @@
+html{
+	text-align: center;
+}
+
+h1{
+	border: 2px solid gold;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: rgba(255,255,255, 0.9);
+	padding: 5px;
+	width: 300px;
+}
+
+body{
+	font-family: "Calibri";
+	background-color: rgba(0,0,0, 0.1);
+	color: black;
+	align-content: center;
+	display: fixed;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}

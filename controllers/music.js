@@ -87,10 +87,10 @@ router.get('/index/:album', function(req,res){
         if(!err && response.statusCode == 200){
             var ass = JSON.parse(thing);
             console.log('================');
-            console.log(ass.items[0].name);
+            console.log(ass);
             console.log('================');
             console.log('!!====== SHOW ROUTE ======!!');
-            res.render('show.ejs', {ass})
+            res.render('album.ejs', {ass})
         }
     });
 })
@@ -102,7 +102,8 @@ router.get('/index/:album/songs', function(req,res){
         if(!err && response.statusCode == 200){
             var body = JSON.parse(thing);
             console.log('================');
-            console.log(body.tracks[0].artists[0].name);
+            console.log(body.tracks);
+            // console.log(body.tracks[0].artists[0].name);
             console.log('================');
             console.log('!!====== SHOW ROUTE ======!!');
             res.render('songs.ejs', {body})

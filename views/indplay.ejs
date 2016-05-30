@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' type='text/css' href='/styles/show.css'>
+	<link rel='stylesheet' type='text/css' href='/styles/indplay.css'>
 	<title>Play</title>
 </head>
 <body>
+	<h1>Songs by <%= music.name %></h1>
+	<div id='wrapper'>
 	<% for(var i=0;i<music.songs.length;i++) { %>
-		<p><a href='<%= music.song_url[i]%>'><%= music.songs[i] %></a></p>
+		<a href='<%= music.song_url[i]%>'><%= music.songs[i] %></a><br>
 	<% } %>
+	</div>
+	<div id='links'>
 	<a href='/music/index/play/<%= music.id %>/edit'>Edit</a>
 	<form action='/music/index/play/<%= music.id %>' method='POST'>
 	  	<input type='hidden' name='_method' value='DELETE'/>
@@ -15,6 +19,7 @@
 	</form>
 	<a href='/music/index/play'>Play!</a>
 	<a href='/music/index'>Index</a>
+	</div>
 
 </body>
 </html>

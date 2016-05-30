@@ -1,0 +1,53 @@
+html{
+	text-align: center;
+}
+
+h1{
+	border: 2px solid gold;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: rgba(255,255,255, 0.9);
+	padding: 5px;
+	width: 400px;
+}
+
+h1:hover{
+	background-color: rgba(0, 0, 0, 0.2);
+	color: black;
+}
+
+body{
+	font-family: "Calibri";
+	background-color: rgba(0,0,0, 0.1);
+	color: black;
+	align-content: center;
+}
+
+#wrapper > a{
+	font-size: 20px;
+}
+
+#wrapper > a:hover{
+	background-color: lightyellow;
+	font-size: 26px;
+}
+
+#links{
+	margin-top: 60px;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+#links > a{
+	font-size: 12px;
+	color: hotpink;
+}
+
+#links > a:first-child{
+	font-size: 24px;
+}
+
+#links > a:hover{
+	background-color: papayawhip;
+	font-size: 25px;
+}

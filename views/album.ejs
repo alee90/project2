@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='/styles/album.css'>
+	<title>Albums</title>
+</head>
+<body>
+	<h1>Top Albums (US)!</h1>
+	<% for(var i=0;i< ass.items.length;i++) { %>
+		<p><%= ass.items[i].name %></p>
+		<a href='<%= ass.items[i].uri %>'><img src='<%= ass.items[i].images[1].url%>'></a>
+	<% } %>
+	<br><a href='/music/index'>Index</a>
+
+</body>
+</html>

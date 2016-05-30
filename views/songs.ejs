@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' type='text/css' href='/styles/show.css'>
+	<link rel='stylesheet' type='text/css' href='/styles/songs.css'>
 	<title>Albums</title>
 </head>
 <body>
 	<h1>Top 10 Songs by <%= body.tracks[0].artists[0].name %>!</h1>
 	<% for(var i=0;i< body.tracks.length;i++) { %>
-		<p><%= body.tracks[i].name %></a></p>
+		<p><a href='<%= body.tracks[i].uri %>'><%= body.tracks[i].name %></a></p>
 	<% } %>
+	<hr>
 	<a href='/music/index'>Index</a>
 </body>
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' type='text/css' href='/styles/show.css'>
+	<link rel='stylesheet' type='text/css' href='/styles/play.css'>
 	<title>Play</title>
 </head>
 <body>
-	<h1>Play Me!</h1>
+	<h1>Play Me!</h1><br>
 	<% for(var i=0;i<music.length;i++) { %>
-		<div id='artist'><h1><a href = '/music/index/play/<%= music[i].id %>'<strong><%= music[i].name %></strong></a></h1></div>
+		<div id='artist'><h2><a href = '/music/index/play/<%= music[i].id %>'<strong><%= music[i].name %></strong></a></h2></div>
 			<% for(var j=0;j<music.length;j++) { %>
-			<div id='song URL'><a href='<%= music[i].song_url[j]%>'><%= music[i].songs[j] %></a></div>
+			<div id='song_url'><a href='<%= music[i].song_url[j]%>'><%= music[i].songs[j] %></a></div>
 			<% } %>
 			<br><hr>
 	<% } %>

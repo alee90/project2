@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel='stylesheet' type='text/css' href='/styles/edit.css'>
 </head>
 <body>
 	<h1>Edit!</h1>
 	<form action="/music/index/play/<%= music.id %>" method="POST" id="editID">
+		<h2>Name</h2>
 		<input type="text" name="name" value="<%= music.name %>" placeholder="Name"/><br>
+		<h2>Spotify ID</h2>
 		<input type="text" name="id" value="<%= music.spotify_id %>" placeholder="Spotify ID"/><br>
-		<input type="text" name="songs" value="<%= music.songs[0] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[1] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[2] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[3] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[4] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[5] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[6] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[7] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[8] %>" placeholder="Songs"/><br>
-		<input type="text" name="songs" value="<%= music.songs[9] %>" placeholder="Songs"/><br>
+		<div id='songs'>
+		<h3>Songs: </h3>
+		<p>1</p><input type="text" name="songs" value="<%= music.songs[0] %>" placeholder="Songs"/><br>
+		<p>2</p><input type="text" name="songs" value="<%= music.songs[1] %>" placeholder="Songs"/><br>
+		<p>3</p><input type="text" name="songs" value="<%= music.songs[2] %>" placeholder="Songs"/><br>
+		<p>4</p><input type="text" name="songs" value="<%= music.songs[3] %>" placeholder="Songs"/><br>
+		<p>5</p><input type="text" name="songs" value="<%= music.songs[4] %>" placeholder="Songs"/><br>
+		<p>6</p><input type="text" name="songs" value="<%= music.songs[5] %>" placeholder="Songs"/><br>
+		<p>7</p><input type="text" name="songs" value="<%= music.songs[6] %>" placeholder="Songs"/><br>
+		<p>8</p><input type="text" name="songs" value="<%= music.songs[7] %>" placeholder="Songs"/><br>
+		<p>9</p><input type="text" name="songs" value="<%= music.songs[8] %>" placeholder="Songs"/><br>
+		<p>10</p><input type="text" name="songs" value="<%= music.songs[9] %>" placeholder="Songs"/><br>
+		</div>
 
-
-		<input type="text" name="song_url" value="<%= music.song_url[0] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[1] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[2] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[3] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[4] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[5] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[6] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[7] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[8] %>" placeholder="Song URL"/><br>
-		<input type="text" name="song_url" value="<%= music.song_url[9] %>" placeholder="Song URL"/><br>
+		<div id='URL'>
+		<h4>Song URL to Spotify: </h4>
+		<p>1</p><input type="text" name="song_url" value="<%= music.song_url[0] %>" placeholder="Song URL"/><br>
+		<p>2</p><input type="text" name="song_url" value="<%= music.song_url[1] %>" placeholder="Song URL"/><br>
+		<p>3</p><input type="text" name="song_url" value="<%= music.song_url[2] %>" placeholder="Song URL"/><br>
+		<p>4</p><input type="text" name="song_url" value="<%= music.song_url[3] %>" placeholder="Song URL"/><br>
+		<p>5</p><input type="text" name="song_url" value="<%= music.song_url[4] %>" placeholder="Song URL"/><br>
+		<p>6</p><input type="text" name="song_url" value="<%= music.song_url[5] %>" placeholder="Song URL"/><br>
+		<p>7</p><input type="text" name="song_url" value="<%= music.song_url[6] %>" placeholder="Song URL"/><br>
+		<p>8</p><input type="text" name="song_url" value="<%= music.song_url[7] %>" placeholder="Song URL"/><br>
+		<p>9</p><input type="text" name="song_url" value="<%= music.song_url[8] %>" placeholder="Song URL"/><br>
+		<p>10</p><input type="text" name="song_url" value="<%= music.song_url[9] %>" placeholder="Song URL"/><br>
+		</div>
 		
 		<input type="hidden" name="_method" value="PUT"/><br><br>
 		<button id='submit'>Submit!</button>
