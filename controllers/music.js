@@ -18,7 +18,7 @@ var spotifyApi = new SpotifyWebApi({
         redirectUri : 'http://localhost:8888/callback'
     });
 
-//MUSIC-INDEX PG
+//MUSIC > INDEX PG
 router.get('/', function(req,res){
     res.redirect('/music/index')
 })
@@ -57,7 +57,6 @@ router.get('/index/new', function(req,res){
     console.log('!!====== NEW ROUTE ======!!');
     res.render('new.ejs');
 })
-
 
 //SEARCH
 router.get('/index/search/', function(req,res){
@@ -142,7 +141,6 @@ router.get('/index/:album/songs', function(req,res){
     });
 })
 
-
 //DELETE FROM PLAY
 router.delete('/index/play/:id',function(req, res) {
     Music.findOneAndRemove({_id: req.params.id}).then(function(err) {
@@ -153,7 +151,6 @@ router.delete('/index/play/:id',function(req, res) {
     res.redirect('/music/index/play');
     });
 });
-
 
 //POST
 router.post('/index', function(req, res) {
