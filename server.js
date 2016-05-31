@@ -10,7 +10,7 @@ var	morgan = require('morgan');
 var	port = process.env.PORT || 3000;
 var request = require('request');
 var cookieParser = require('cookie-parser');
-var http = require("http");
+var http = require('http');
 
 //API
 var SpotifyWebApi = require('spotify-web-api-node');
