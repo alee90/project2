@@ -2,7 +2,8 @@
 var express = require('express');
 var	app = express();
 var	bodyParser = require('body-parser');
-var	db = process.env.MONGODB_URI || "mongodb://localhost/spotify_app";
+// var	db = process.env.MONGODB_URI || "mongodb://localhost/spotify_app";
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/spotify_app';
 var	methodOverride = require('method-override');
 var	mongoose = require('mongoose');
 var	morgan = require('morgan');
@@ -29,7 +30,8 @@ app.use(methodOverride(function(req, res){
 }));
 
 // DATABASE
-mongoose.connect(db);
+// mongoose.connect(db);
+mongoose.connect(mongoUri);
 
 // CONTROLLERS
 var music = require('./controllers/music.js');
