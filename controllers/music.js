@@ -77,8 +77,9 @@ router.get('/index/search/:search', function(req,res){
     var x = req.params.search;
     spotifyApi.searchTracks(x)
     .then(function(data) {
+        console.log(data.body.tracks.items)
         var thing = data.body
-        console.log('Search by '+x, thing.tracks.items[1]);
+        // console.log('Search by '+x, thing.tracks.items[1]);
         // console.log(body.tracks)
         // res.json(data.body);
         res.render('searchres.ejs', {thing});

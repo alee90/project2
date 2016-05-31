@@ -3,15 +3,16 @@
 <head>
 	<link rel='stylesheet' type='text/css' href='/styles/songs.css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Albums</title>
+	<title>Search</title>
 </head>
-<body>
-
-<h2><%= thing.tracks.items[1].artists[1].name %></h2>
-<h2><%= thing.tracks.items[1].artists[0].name %></h1>
-<h3><%= thing.tracks.items[1].name %></h3>
-<h3><%= thing.tracks.items[1].uri %></h3>
-
+<body>	
+	<h1>Search Results</h1>
+	<% for (i = 0; i < thing.tracks.items.length; i++) { %>
+		<% for (j = 0; j < thing.tracks.items[i].artists.length; j++) { %>
+			<p><%= thing.tracks.items[i].artists[j].name %></p>
+			<p><a href='<%= thing.tracks.items[i].uri %>'><%= thing.tracks.items[i].name %></a></p>
+	<% } %>
+<% } %>
 	<hr>
 	<a href='/music/index'>Index</a>
 </body>
