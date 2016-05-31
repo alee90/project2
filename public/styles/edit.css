@@ -37,7 +37,14 @@ input{
 	display: inline-block;
 }
 
+
 /*#URL{
 	float: left;
 	display: inline-block;
 }*/
+
+@media (max-width: 600px){
+	html{
+		text-align: center;
+	}
+}

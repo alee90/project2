@@ -90,3 +90,73 @@ a:hover{
 	font-size: 26px;
 	color: hotpink;
 }
+
+
+@media (max-width: 600px){
+	h1{
+		border: 1px solid gold;
+		display: inline-block;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: rgba(255,255,255, 0.9);
+		padding: 5px;
+		width: 300px;
+	}
+
+	h1:hover{
+		background-color: rgba(0, 0, 0, 0.2);
+		color: black;
+	}
+	#links > a{
+		font-size: 20px;
+		color: hotpink;
+	}
+
+	#links > a:first-child{
+		font-size: 30px;
+	}
+
+	#artist{
+	background-color: #eee9e9;
+	color: green;
+	border: 2px solid black;
+	display: inline-block;
+	padding: 10px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 200px;
+
+	}
+
+	#artist > h2 > a{
+		color: hotpink;
+	}
+
+	#artist:hover{
+		background-color: papayawhip;
+	}
+
+	div > a{
+		color: orange;
+		font-size: 24px;
+	}
+
+	#content{
+		background-color: rgba(0, 0, 4, 0.5);
+		align-content: center;
+		margin: 0 auto;
+		border: 1px solid yellow;
+		width: 300px;
+		padding: 10px;
+		height: 100px;
+	}
+
+	#content:hover{
+		background-color: rgba(0, 30, 4, 0.4);
+	}
+
+	#content > a{
+		padding: 15px;
+		margin: 0 auto;
+	}
+}

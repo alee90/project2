@@ -51,3 +51,28 @@ body{
 	background-color: papayawhip;
 	font-size: 25px;
 }
+
+@media (max-width: 600px){
+
+	h1{
+		border: 2px solid gold;
+		display: inline-block;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: rgba(255,255,255, 0.9);
+		padding: 5px;
+		width: 200px;
+	}
+
+	h1:hover{
+		background-color: rgba(0, 0, 0, 0.2);
+		color: black;
+	}
+	#links > a{
+		font-size: 20px;
+		color: hotpink;
+	}
+
+	#links > a:first-child{
+		font-size: 30px;
+	}
+}
