@@ -24,6 +24,7 @@ body{
 a{
 	padding: 5px;
 	color: lightblue;
+	margin-bottom: 20px;
 }
 
 #artist{
@@ -66,6 +67,11 @@ a:hover{
 }
 #button{
 	border: 1px solid black;
+}
+
+#links{
+	padding: 10px;
+	height: 50px;
 }
 
 @media (max-width: 600px){

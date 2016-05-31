@@ -115,12 +115,12 @@ router.get('/index/:album', function(req,res){
     var x = req.params.album;
     request('https://api.spotify.com/v1/artists/'+x+'/albums?market=US&album_type=album', function(err,response,thing){
         if(!err && response.statusCode == 200){
-            var ass = JSON.parse(thing);
+            var pass = JSON.parse(thing);
             console.log('================');
-            console.log(ass);
+            console.log(pass);
             console.log('================');
             console.log('!!====== ALBUM ROUTE ======!!');
-            res.render('album.ejs', {ass})
+            res.render('album.ejs', {pass})
         }
     });
 })
