@@ -99,7 +99,7 @@ router.get('/index/play/:id/edit', function(req,res){
     });
 })
 
-// UPDATE
+//UPDATE
 router.put('/index/play/:id', function(req,res){
     console.log('!!========!!UPDATE ROUTE!!========!!');
     Music.findOneAndUpdate({
@@ -110,7 +110,7 @@ router.put('/index/play/:id', function(req,res){
     res.redirect('/music/index/play');
 });
 
-//SHOW
+//ALBUM INFO
 router.get('/index/:album', function(req,res){
     var x = req.params.album;
     request('https://api.spotify.com/v1/artists/'+x+'/albums?market=US&album_type=album', function(err,response,thing){
@@ -119,7 +119,7 @@ router.get('/index/:album', function(req,res){
             console.log('================');
             console.log(ass);
             console.log('================');
-            console.log('!!====== SHOW ROUTE ======!!');
+            console.log('!!====== ALBUM ROUTE ======!!');
             res.render('album.ejs', {ass})
         }
     });
@@ -135,7 +135,7 @@ router.get('/index/:album/songs', function(req,res){
             console.log(body.tracks);
             // console.log(body.tracks[0].artists[0].name);
             console.log('================');
-            console.log('!!====== SHOW ROUTE ======!!');
+            console.log('!!====== SONGS ROUTE ======!!');
             res.render('songs.ejs', {body})
         }
     });
