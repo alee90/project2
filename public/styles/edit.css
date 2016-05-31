@@ -34,8 +34,10 @@ input{
 
 #song{
 	float: left;
+	display: inline-block;
 }
 
-#url{
+/*#URL{
 	float: left;
-}
+	display: inline-block;
+}*/

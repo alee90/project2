@@ -77,3 +77,16 @@ a:hover{
 #button{
 	border: 1px solid black;
 }
+
+#links{
+	margin-top: 15px;
+}
+
+#links > a{
+	font-size: 20px;
+}
+
+#links > a:hover{
+	font-size: 26px;
+	color: hotpink;
+}

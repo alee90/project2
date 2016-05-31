@@ -5,7 +5,7 @@
 	<title>Play</title>
 </head>
 <body>
-	<h1>Play Me!</h1><br>
+	<h1>Play Page</h1><br>
 	<% for(var i=0;i<music.length;i++) { %>
 		<div id='artist'><h2><a href = '/music/index/play/<%= music[i].id %>'<strong><%= music[i].name %></strong></a></h2></div>
 			<% for(var j=0;j<music.length;j++) { %>
@@ -13,9 +13,9 @@
 			<% } %>
 			<br><hr>
 	<% } %>
-
-	<a href='/music/index/new'>New Artist/Songs!</a><br>
-	<a href='/music/index'>Index</a>
-
+	<div id='links'>
+		<a href='/music/index/new'>New Artist/Songs!</a><br>
+		<a href='/music/index'>Index</a>
+	</div>
 </body>
 </html>

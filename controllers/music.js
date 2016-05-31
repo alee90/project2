@@ -57,6 +57,36 @@ router.get('/index/new', function(req,res){
     console.log('!!====== NEW ROUTE ======!!');
     res.render('new.ejs');
 })
+
+
+//SEARCH
+router.get('/index/search/', function(req,res){
+    console.log('!!========!!SEARCH ROUTE!!========!!');
+    res.render('search.ejs')
+});
+
+//POST SEARCH
+router.post('/index/search', function(req,res){
+    var search = req.body.search;
+    console.log(search);
+    res.redirect('/music/index/search/'+search);
+});
+
+//ACTUAL SEARCH
+router.get('/index/search/:search', function(req,res){
+    var x = req.params.search;
+    spotifyApi.searchTracks(x)
+    .then(function(data) {
+        var thing = data.body
+        console.log('Search by '+x, thing.tracks.items[1]);
+        // console.log(body.tracks)
+        // res.json(data.body);
+        res.render('searchres.ejs', {thing});
+    }, function(err) {
+        console.error(err);
+    });
+})
+
 //EDIT
 router.get('/index/play/:id/edit', function(req,res){
     console.log(req.params);
@@ -123,8 +153,6 @@ router.delete('/index/play/:id',function(req, res) {
     });
 });
 
-//PLAY --> ARTIST INDIV SONGS
-
 
 //POST
 router.post('/index', function(req, res) {
@@ -141,15 +169,4 @@ router.post('/index', function(req, res) {
 });
 
 
-//SEARCH
-// router.get('/search/:search', function(req,res){
-//     var x = req.params.search;
-//     spotifyApi.searchTracks(x);
-//     .then(function(data) {
-//         console.log('Search by '+x, data.body);
-//         res.json(data.body);
-//     }, function(err) {
-//         console.error(err);
-//     });
-// })
 module.exports = router;

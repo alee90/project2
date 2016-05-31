@@ -7,7 +7,6 @@ body{
 	background-color: rgba(0,0,0, 0.1);
 	color: black;
 	align-content: center;
-	display: fixed;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 }
